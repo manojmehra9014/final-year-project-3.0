@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/assert/cjEdCiL.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#prevcodes{
+    color: crimson;
+    font-size: 1.3rem;
+    font-family: Caveat;
+    font-weight: 900;
+    padding: 5px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.74);
+    z-index: -1;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    font-size: 1rem;
+    margin: auto 20px;
+    cursor: pointer;
+}
+
+.nav-links {
+    position: absolute;
+    right: 30px;
+    margin: 30px 30px;
+}
+
+.nav-links>a {
+    margin: auto 30px;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+
+.nav-links>a:hover {
+    color: crimson;
+}
+
+#home {
+    color: crimson;
+}
+
+.heading {
+    font-size: 3rem;
+    color: rgb(226, 226, 226);
+    margin: 50px 80px;
+}
+
+.location {
+    font-size: 2rem;
+    color: crimson;
+    margin: 0 80px;
+}
+
+.para {
+    width: 20vw;
+    color: rgb(219, 219, 219);
+    font-size: 1.2rem;
+    margin: 50px 80px;
+    font-style: italic;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    font-size: 2.5rem;
+    margin: 10px 80px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: all 0.5s;
+    text-align: center;
+    background-color: crimson;
+    color: rgb(224, 224, 224);
+    border: 2px solid crimson;
+}
+
+.btn:hover {
+    background-color: #ffffff00;
+}
+
+
+header {
+    margin: 0 5vw;
+}
+
+main {
+    margin: 0 10vw;
+    display: flex;
+}
+
+h2 {
+    margin-top: 15vh;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#btn1 {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#inp1 {
+    width: 15vw;
+    height: 5vh;
+    margin: 10px 80px;
+    border-radius: 19px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+#right-section{
+    width: 49vw;
+    margin-top: 70px;
+    height: 60vh;
+    border: 1px solid rgb(92, 90, 90);
+    border-radius: 19px;
+}
+
+#left-section{
+    width: 49vw;
+}
+
+
+hr{
+    margin: 8px;
+}
+li{
+    border: 1px solid crimson;
+    border-radius: 19px;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    margin: 3px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}

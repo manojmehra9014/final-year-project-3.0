@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeks Force| Event Handling and Interaction</title>
+    <link rel="stylesheet" href="/components/courses/html/html_course_style.css">
+    <link rel="shortcut icon" href="/assert/logo1.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="p1 logo">
+                <img src="/assert/main_logo.png" alt="Logo">
+                <span>GeeksForce</span>
+            </div>
+            <div class="p2">
+                <div class="links">
+                    <a id="home" href="/">Home</a>
+                    <a href="/blog.html-introduction">HTML</a>
+                    <a href="/blog.introduction-to-css">CSS</a>
+                    <a href="/blog.introduction-to-javascript">JS</a>
+                    <a href="/blog.introduction-to-react">React.JS </a>
+                    <a href="/blog.introduction-to-nodejs">Node.Js</a>
+                </div>
+            </div>
+            <div class="p3">
+                <button><a target="_blank" href="https://chat.openai.com/">GPT</a></button>
+                <button><a href="">Post</a></button>
+            </div>
+        </nav>
+
+    </div>
+
+
+    <div class="main">
+
+
+
+        <div class="left-section">
+            <ul>
+                <li><a class="a" href="/blog.introduction-to-javascript" >Introduction to JavaScript</a></li>
+                <li><a class="a" href="/blog.javascript-basics-and-syntax" >JavaScript Basics and Syntax</a></li>
+                <li><a class="a" href="/blog.working-with-variables-and-data-types" >Working with Variables and Data Types</a></li>
+                <li><a class="a" href="/blog.operators-and-expressions-in-javascript" >Operators and Expressions in JavaScript</a></li>
+                <li><a class="a" href="/blog.control-flow-and-conditional-statements" >Control Flow and Conditional Statements</a></li>
+                <li><a class="a" href="/blog.looping-and-iteration" >Looping and Iteration</a></li>
+                <li><a class="a" href="/blog.functions-in-javascript" >Functions in JavaScript</a></li>
+                <li><a class="a" href="/blog.scope-and-closures" >Scope and Closures</a></li>
+                <li><a class="a" href="/blog.arrays-and-array-manipulation" >Arrays and Array Manipulation</a></li>
+                <li><a class="a" href="/blog.objects-and-object-oriented-programming-in-javascript" >Objects and Object-Oriented Programming in JavaScript</a></li>
+                <li><a class="a" href="/blog.manipulating-the-document-object-model" >Manipulating the Document Object Model (DOM)</a></li>
+                <li><a class="a" href="/blog.event-handling-and-interaction" >Event Handling and Interaction</a></li>
+                <li><a class="a" href="/blog.asynchronous-javascript-and-callbacks" >Asynchronous JavaScript and Callbacks</a></li>
+                <li><a class="a" href="/blog.promises-and-async-await" >Promises and Async/Await</a></li>
+                <li><a class="a" href="/blog.error-handling-and-debugging" >Error Handling and Debugging</a></li>
+                <li><a class="a" href="/blog.modules-and-modular-javascript" >Modules and Modular JavaScript</a></li>
+                <li><a class="a" href="/blog.es6+-features-and-updates" >ES6+ Features and Updates</a></li>
+                <li><a class="a" href="/blog.regular-expressions-in-javascript" >Regular Expressions in JavaScript</a></li>
+                <li><a class="a" href="/blog.working-with-json-data" >Working with JSON Data</a></li>
+                <li><a class="a" href="/blog.making-http-requests-with-fetch-api" >Making HTTP Requests with Fetch API</a></li>
+                <li><a class="a" href="/blog.client-side-storage" >Client-Side Storage (Local Storage and Session Storage)</a></li>
+                <li><a class="a" href="/blog.introduction-to-javascript-testing" >Introduction to JavaScript Testing</a></li>
+                <li><a class="a" href="/blog.performance-optimization-techniques" >Performance Optimization Techniques</a></li>
+                <li><a class="a" href="/blog.security-best-practices-in-javascript" >Security Best Practices in JavaScript</a></li>
+                <li><a class="a" href="/blog.introduction-to-javascript-frameworks" >Introduction to JavaScript Frameworks (React, Angular, Vue.js)</a></li>
+                <li><a class="a" href="/blog.building-single-page-applications-with-javascript" >Building Single-Page Applications (SPA) with JavaScript</a></li>
+                <li><a class="a" href="/blog.working-with-apis-and-restful-services" >Working with APIs and RESTful Services</a></li>
+                <li><a class="a" href="/blog.introduction-to-node.js-and-server-side-javascript" >Introduction to Node.js and Server-Side JavaScript</a></li>
+                <li><a class="a" href="/blog.working-with-databases-in-javascript" >Working with APIs and RESTful Services</a></li>
+            </ul>
+        </div>
+
+
+        <div class="right-section" id="content">
+            <h1 id="main_heading">Event Handling and Interaction</h1>
+    
+            <p>
+                Event handling is a crucial aspect of web development that allows you to respond to user interactions on web pages. Understanding how to handle events and enable interaction is essential for creating interactive and dynamic web applications. Here's an overview of event handling in JavaScript:
+            </p>
+            
+            <h2>Event Listeners</h2>
+            
+            <p>
+                Event listeners are used to listen for specific events and execute code when those events occur. JavaScript provides various methods to attach event listeners to elements, such as <code>addEventListener</code>. You can specify the type of event to listen for, such as <code>click</code>, <code>keydown</code>, or <code>submit</code>, and define the code to run when the event is triggered. Here's an example of adding an event listener to a button element:
+            </p>
+            
+            <pre>
+                <code>
+                    const button = document.querySelector('#myButton');
+        
+                    button.addEventListener('click', () => {
+                        // Handle the button click event
+                        console.log('Button clicked!');
+                    });
+                </code>
+            </pre>
+            
+            <h2>Event Object</h2>
+            
+            <p>
+                When an event is triggered, an event object is automatically created and passed to the event handler function. The event object contains information about the event, such as the target element, event type, and additional properties specific to the event. You can access and utilize this event object within your event handler function. Here's an example of accessing the event object and its properties:
+            </p>
+            
+            <pre>
+                <code>
+                    const link = document.querySelector('#myLink');
+        
+                    link.addEventListener('click', (event) => {
+                        // Prevent the default link behavior
+                        event.preventDefault();
+        
+                        // Get the target element
+                        const target = event.target;
+        
+                        // Get the href attribute of the link
+                        const href = target.getAttribute('href');
+        
+                        // Perform further actions based on the event
+                        console.log('Link clicked! Href: ' + href);
+                    });
+                </code>
+            </pre>
+            
+            <h2>Event Bubbling and Event Capturing</h2>
+            
+            <p>
+                In JavaScript, events follow a bubbling or capturing phase, which determines the order in which events are triggered when an event occurs on a nested element. Understanding event propagation is important when handling events on parent and child elements. By utilizing event propagation, you can handle events at different levels of the DOM hierarchy. Here's an example of event bubbling and capturing:
+            </p>
+            
+            <pre>
+                <code>
+                    const parent = document.querySelector('#parent');
+                    const child = document.querySelector('#child');
+        
+                    parent.addEventListener('click', () => {
+                        console.log('Parent clicked!');
+                    }, false);
+        
+                    child.addEventListener('click', () => {
+                        console.log('Child clicked!');
+                    }, true);
+                </code>
+            </pre>
+            
+            <p>
+                Event handling and interaction play a crucial role in creating engaging web applications. By utilizing event listeners, event objects, and understanding event propagation, you can create interactive experiences for your users.
+            </p>
+        
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

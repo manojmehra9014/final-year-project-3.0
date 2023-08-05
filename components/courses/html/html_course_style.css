@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dancing+Script:wght@700&family=Kalam&family=Pacifico&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    /* background-color: #1a1919; */
+    color: white;
+
+
+}
+
+body {
+    background: linear-gradient(-45deg, orange, pink, skyblue, lightgreen);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    display: flex;
+}
+
+.logo>img {
+    width: 25px;
+    margin: auto;
+    height: 25px;
+}
+
+.main {
+    margin-top: 10vh;
+    position: static;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: hsl(0, 0%, 100%);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+span {
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    height: 8vh;
+    background-color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1a1919;
+}
+
+.p1 {
+    width: 10vw;
+}
+
+.p2 {
+    width: 50vw;
+}
+
+.p3 {
+    width: 20vw;
+}
+
+.links>a {
+    margin: 0 1vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    width: 6vw;
+    height: 4vh;
+    margin: 0 1vw;
+    color: white;
+    font-weight: 700;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button>a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.left-section {
+    width: 20%;
+    height: 90vh;
+    float: left;
+    scrollbar-width: thin;
+    overflow: auto;
+    overflow-y: auto;
+    position: fixed;
+    font-family: caveat;
+    font-weight: 700;
+    padding: 20px;
+    color: #fff;
+    background-color: #3d3d3d1e;
+    border-radius: 0 10px 10px 0;
+}
+
+.left-section>li {
+    border-bottom: 1px solid black;
+}
+
+.left-section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left-section li a {
+    display: block;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.left-section li a:hover {
+    background-color: #0e4969;
+    border-radius: 10px;
+}
+
+li a.clicked {
+    color: red;
+    font-weight: 800;
+}
+
+.right-section {
+    width: 60%;
+    float: left;
+    overflow-y: auto;
+    position: relative;
+    padding: 20px;
+    border-right: 2px solid black;
+    margin-left: 22%;
+}
+
+.right-section>div {
+    display: none;
+}
+
+.right-section>div:first-child {
+    display: block;
+}
+
+.right-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#main_heading {
+    margin: 5vh 0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #0abcf1;
+    margin-top: 30px;
+}
+
+h4 {
+    color: #0ea3d1;
+    margin-top: 30px;
+}
+
+h5 {
+    color: #1394cf;
+    margin-top: 30px;
+}
+
+h6 {
+    color: #1e91d3;
+    margin-top: 30px;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+h2 {
+    color: #336699;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Style the paragraphs */
+p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style the unordered list */
+ul {
+    list-style: circle;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* Style the list items */
+.right-section>li {
+    margin-bottom: 10px;
+}
+
+/* Style the links */
+.right-section>a {
+    color: #336699;
+    text-decoration: none;
+}
+
+.right-section>a:hover {
+    text-decoration: underline;
+}
+
+
+.right-section>img {
+    width: 100%;
+    height: 60%;
+}
+
+.right-section>ul {
+    margin-bottom: 20px;
+}
+
+pre {
+    background-color: #838383;
+    margin: 2vh 0;
+    box-shadow: 2px 2px 30px rgba(55, 61, 63, 0.644);
+    padding: 3vh 2vw;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        display: none;
+    }
+
+    .left-section {
+        width: 30%;
+        margin: 0 -5%;
+    }
+
+    .right-section {
+        margin-left: 26%;
+        width: 80%;
+
+    }
+}

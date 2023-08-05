@@ -1,0 +1,651 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 10vw;
+}
+
+.dark-mode{
+    background-color: #180e0e;
+    color: #f9f9f9;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo>img {
+    width: 30px;
+    margin: auto;
+    height: 30px;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+}
+
+nav {
+    display: flex;
+    height: 10vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: kalam , 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.p1 {
+    width: 10vw;
+}
+
+.p2 {
+    width: 50vw;
+}
+
+.p3 {
+    width: 20vw;
+}
+
+.links>a {
+    margin: 0 1vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    width: 6vw;
+    height: 4vh;
+    margin: 0 1vw;
+    color: white;
+    font-weight: 700;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button>a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.hero {
+    display: flex;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#home {
+    color: crimson;
+}
+
+
+.l1 {
+    width: 40%;
+    margin-left: 10w;
+    height: 40vh;
+
+}
+
+.left-section {
+    padding: 1%;
+    width: 60%;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#learning {
+    font-size: 1.6rem;
+    font-family: Caveat;
+    font-weight: 400;
+}
+
+.left-upper {
+    height: 60%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.left-bottom {
+    height: 40%;
+}
+
+.left-bottom>button {
+    width: 9vw;
+    margin-top: 5vh;
+    height: 5vh;
+}
+
+#ty {
+    text-decoration: none;
+    color: crimson;
+}
+
+.right-section {
+    background-image: url(./assert/Image.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    width: 30%;
+    border-radius: 19px;
+
+}
+
+#p1 {
+    font-size: 0.8rem;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-items {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-items img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5vw;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carousel-prev {
+    left: -5vw;
+}
+
+.carousel-next {
+    right: -5vw;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.carousel-button {
+    background-color: #000000;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-button:hover {
+    background-color: #0062cc;
+}
+
+.carousel-prev {
+    margin-right: 1rem;
+}
+
+.btn-course{
+    width: 40%;
+    height: 15%;
+    margin: 0 30%;
+    border-radius: 10px;
+    padding-top: 12px;
+    background-color: rgb(81, 81, 240);
+    justify-content: center;
+    align-items: center;
+}
+.btn-course>a{
+    text-decoration: none;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    color: #fff;
+}
+
+.carousel-next {
+    margin-left: 1rem;
+}
+
+.hero2 {
+    text-align: center;
+    width: 80%;
+    margin: 5vh auto;
+    margin-bottom: 20vh;
+}
+
+.hero2>h1 {
+    margin: 5vh 0;
+    color: #000000;
+    font-size: 2.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero3 {
+    display: flex;
+    width: 65%;
+    height: 70%;
+    border: 2px solid black;
+    border-style: dashed;
+    border-radius: 19px;
+    margin: auto;
+}
+
+.hero3-left{
+    width: 60%;
+    margin: auto;
+}
+
+.c1>a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.c1{
+    border: 1px solid rgb(62, 223, 223);
+}
+
+.c1:hover{
+    background-color: crimson;
+    >a{
+        color: white;
+    }
+}
+
+.c1{
+    text-align: center;
+    padding: 5px 5px;
+    background-color: #fff;
+    color: #121212;
+    margin: 1% 5%;
+    width: 90%;
+    cursor: pointer;
+    font-family: Caveat;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 19px;
+    transition: all 0.5s;
+}
+
+.h3-h3{
+    margin-top: 20vh;
+}
+
+.up{
+    height: 60%;
+    margin-top: 3vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assert/undraw_software_engineer_re_tnjc.svg);
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.hero3-right{
+    margin-top: 10vh;
+    margin-right: 2vw;
+    width: 40%;
+}
+
+.down{
+    text-align: center;
+}
+footer {
+    height: 50vh;
+    display: flex;
+    margin-top: 10vh;
+}
+
+footer>div {
+    width: 30%;
+    margin: auto;
+    height: 40vh;
+}
+
+.f-left {
+    font-family: kalam;
+    padding-top: 10vh;
+}
+
+.f-left>h3 {
+    margin-top: 2vh;
+}
+
+.f-center {
+    text-align: center;
+    padding-top: 3vh;
+    border: 2px solid black;
+    border-left: 0;
+    border-bottom: 0;
+    border-top: 0;
+
+}
+
+.f-center>h3 {
+    margin: 5vh 0;
+}
+
+.f-center>a {
+    margin-top: 1vh;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+}
+
+.f-right {
+    margin-top: 20vh;
+}
+
+.f-right>h2 {
+    margin-bottom: 5vh;
+}
+
+.f-right>h5 {
+    margin: 1vh 0;
+}
+#html-cou{
+    text-decoration: none;
+    color: white;
+}
+
+#l-header {
+    text-align: center;
+    color: #000000;
+    font-size: 2.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#l-header>span {
+    color: #0062cc;
+}
+
+
+.hero4 {
+    height: 50%;
+    margin-top: 17vh;
+    display: flex;
+
+}
+
+.h4-left {
+    height: 45%;
+    margin: 2vh 5vw;
+    width: 24vw;
+    background-position: 5vw 0;
+    border-style: dashed;
+    border: 2px solid rgb(135, 133, 133);
+    border-radius: 12px;
+}
+
+.h4-img {
+    height: 30vh;
+    width: 23vw;
+    background-image: url(./assert/landing_assert/my_photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.h4-heading {
+    text-align: center;
+    height: 15vh;
+    width: 23vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 3vh;
+}
+
+
+.h4-right {
+    height: 45vh;
+    margin: 2vh 2vh;
+    width: 60%;
+    background-image: url(./assert/undraw_software_engineer_re_tnjc.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 8vw 0;
+}
+
+.hamburger {
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+}
+header .header-right .hamburger div {
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #fff;
+}
+
+    @media only screen and (max-width: 768px) {
+        /* Adjust font size for smaller screens */
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        nav{
+            height: 10vh;
+        }
+
+        .p3>button{
+            width: 45px;
+
+        }
+
+        .hero{
+            margin-top: 1px;
+        }
+
+        .logo>img{
+            width: 30px;
+            height: 30px;
+        }
+
+        .left-upper{
+            height: 20vh;
+        }
+
+        .left-bottom{
+            height: 10vh;
+        }
+        .logo>h2{
+            font-size: 1.3rem;
+            margin-left: 5px;
+        }
+
+        .links>a{
+            font-size: 0.6rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        h4 {
+            font-size: 0.9rem;
+        }
+
+        p{
+            font-size: 0.9rem;
+        }
+
+        #learning{
+            font-size: 0.9rem;
+        }
+
+        .p1{
+            width: 10vw;
+            margin: 0 5vw;
+        }
+        
+        .p2{
+            width: 60vw;
+            margin: 0 5vw;
+        }
+        
+        .p3{
+            width: 25vw;
+            display: flex;
+            margin: 0 5vw;
+        }
+
+        .left-bottom>button{
+            width: 25vw;
+        }
+
+        .links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #f9f9f9;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          min-width: 160px;
+          padding: 10px 0;
+        }     
+
+        .hero2{
+            height: 3vh;
+        }
+
+        .hero2>h1{
+            font-size: 1.2rem;
+        }
+
+        .hero2>img{
+            width: 20px;
+        }
+
+        .carousel-items>img{
+            width: 60px;
+            height: 60px;
+
+        }
+
+        .carousel-next{
+            width: 30px;
+            height: 30px;
+        }
+    
+        .carousel-prev{
+            width: 30px;
+            height: 30px;
+        }
+
+        #l-header{
+            font-size: 1.3rem;
+        }
+
+        .hero3{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5vh;
+        }
+
+        .hero3-left{
+            display: block;
+        }
+
+        .hero3-right{
+            display: block;
+            margin: auto;
+            margin-top: 5vh;
+            text-align: center;
+        }
+        .down{
+            display: none;
+        }
+
+        .hero4{
+            display: block;
+
+        }
+
+        .h4-left{
+            width: 90vw;
+            height: 70vh;
+        }
+        .h4-img{
+            width: 90vw;
+            height: 40vh;
+            margin: auto;
+            justify-content: center;
+            background-size: contain;
+        }
+        .h4-heading{
+            margin-top: 2px;
+            margin: auto;
+        }
+
+        .h4-right{
+            display: none;
+        }
+
+        footer{
+            >f-left,f-center{
+                display: inline-flex;
+            }
+
+        }
+        .f-right{
+            display: none;
+        }
+}    
+          
