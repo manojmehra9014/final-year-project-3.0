@@ -7,22 +7,36 @@ const mongoose = require("mongoose");
 require("./conn");
 const static_path = path.join(__dirname, "../");
 const static_path2 = path.join(__dirname, "../");
-
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
-const bcryptjs = require('bcryptjs');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const auth = require("../api/auth");
-const { MongoClient } = require("mongodb");
-const mongoclient = require('mongodb').MongoClient;
-const http = require('http');
-const { assert } = require("console");
-const nodemailer = require('nodemailer');
+
+
+
+// //server connection code here 
+// const uri = "mongodb+srv://manojmehra9014:fWrMYG2ooazTDFZ7@cluster0.hp03zdh.mongodb.net/?retryWrites=true&w=majority";
+// // const mongoose = require('mongoose');
+
+// mongoose.connect(uri, {
+//   dbName: "backend",
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+//   .then(() => {
+//     console.log('Connected to MongoDB');
+//     // Additional code for your Express.js app
+//   })
+//   .catch((error) => {
+//     console.error('Error connecting to MongoDB:', error);
+//   });
+
+
 
 app.use(session({
-  secret: 'shhhh', // Set a secret key for session encryption
+  secret: 'shhhh',
   resave: false,
   saveUninitialized: true,
 }));
@@ -253,7 +267,7 @@ app.post("/add", async (req, res) => {
 
 
 app.post('/check', async (req, res) => {
-  const { username, useremail, password } = req.body;
+  const { useremail, password } = req.body;
   try {
     if (useremail === null || password === null) {
       res.status(400).json({ message: "Unwanted access | enter deatls please !" })
