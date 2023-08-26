@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "geeksforce",
+  "builds": [
+    {
+      "src": "/backend/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/backend/app.js"
+    }
+  ]
+}
