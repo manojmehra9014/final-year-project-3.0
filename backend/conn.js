@@ -1,22 +1,17 @@
-const { MongoClient } = require('mongodb');
-async function connectToMongoDB() {
-  const uri = "mongodb+srv://manojmehra:root123@cluster0.rrkz1la.mongodb.net/?retryWrites=true&w=majority";
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-  try {
-    await client.connect();
+const mongoose = require("mongoose");
 
-    // Access a specific database and collection
-    // const database = client.db('your-database-name');
-    // const collection = database.collection('your-collection-name');
+// mongodb://127.0.0.1:27017
 
-    // Perform database operations here
-    // For example, you can insert a document:
-    // await collection.insertOne({ key: 'value' });
+mongoose.connect("mongodb+srv://manojmehra:root123@cluster0.rrkz1la.mongodb.net/", {
+  dbName: "backend",
+})
+  .then(() => console.log("Database connected with login system 3.0"))
+  .catch((e) => console.log(e));
 
-    console.log("Connected to MongoDB Atlas");
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-  }
-}
 
-connectToMongoDB();
+
+// Usage in your Express.js app or serverless function:
+
+
+// Additional code for your Express.js app
+
