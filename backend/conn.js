@@ -1,42 +1,22 @@
-const uri = "mongodb+srv://manojmehra9014:fWrMYG2ooazTDFZ7@cluster0.hp03zdh.mongodb.net/?retryWrites=true&w=majority";
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
+async function connectToMongoDB() {
+  const uri = "mongodb+srv://manojmehra:root123@cluster0.rrkz1la.mongodb.net/?retryWrites=true&w=majority";
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
 
-mongoose.connect(uri, {
-  dbName: "backend",
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log('Connected to MongoDB');
-  // Additional code for your Express.js app
-})
-.catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
-});
+    // Access a specific database and collection
+    // const database = client.db('your-database-name');
+    // const collection = database.collection('your-collection-name');
 
+    // Perform database operations here
+    // For example, you can insert a document:
+    // await collection.insertOne({ key: 'value' });
 
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// const uri = "mongodb+srv://root:YTXhA42TEEErdz0g@cluster0.rrkz1la.mongodb.net/?retryWrites=true&w=majority";
-// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-// const client = new MongoClient(uri, {
-//   serverApi: {
-//     version: ServerApiVersion.v1,
-//     strict: true,
-//     deprecationErrors: true,
-//   }
-// });
-// async function run() {
-//   try {
-//     // Connect the client to the server	(optional starting in v4.7)
-//     await client.connect();
-//     // Send a ping to confirm a successful connection
-//     await client.db("database").command({ ping: 1 });
-//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
-// // Call the connectToDatabase function
-// // connectToDatabase();
+    console.log("Connected to MongoDB Atlas");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
+}
+
+connectToMongoDB();

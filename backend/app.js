@@ -14,27 +14,6 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const auth = require("../api/auth");
 
-
-
-// //server connection code here 
-// const uri = "mongodb+srv://manojmehra9014:fWrMYG2ooazTDFZ7@cluster0.hp03zdh.mongodb.net/?retryWrites=true&w=majority";
-// // const mongoose = require('mongoose');
-
-// mongoose.connect(uri, {
-//   dbName: "backend",
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// })
-//   .then(() => {
-//     console.log('Connected to MongoDB');
-//     // Additional code for your Express.js app
-//   })
-//   .catch((error) => {
-//     console.error('Error connecting to MongoDB:', error);
-//   });
-
-
-
 app.use(session({
   secret: 'shhhh',
   resave: false,
