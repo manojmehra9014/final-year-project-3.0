@@ -13,8 +13,9 @@ const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const auth = require("../api/auth");
-app.use('/assets', express.static(path.join(static_path, '../asserts')));
-app.use('/compoment', express.static(path.join(static_path, '../compoments')));
+
+app.use('/asset', express.static(path.join(static_path, '../assert')));
+app.use('/compoments', express.static(path.join(static_path, '../compoments')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(static_path2));
