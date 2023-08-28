@@ -1,0 +1,8 @@
+[build]
+    functions = "functions"
+
+
+[[redirect]]
+from = "/*"
+to = "/app.js"
+status = 200

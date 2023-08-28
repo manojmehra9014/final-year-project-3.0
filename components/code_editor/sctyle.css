@@ -10,16 +10,17 @@
   box-sizing: border-box;
 }
 
-.info>img{
+.info>img {
   width: 50px;
   height: 50px;
 }
 
-.info>p{
+.info>p {
   display: inline-;
   font-size: 0.8rem;
 
 }
+
 body {
   width: auto;
   height: 100vh;
@@ -56,10 +57,11 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   border: 1px solid rgb(255, 255, 255);
   padding: 0 4px 0 4px;
-  
+
   font-family: Kalam;
   font-size: 0.7rem;
 }
@@ -86,7 +88,7 @@ th, td {
 #btn_save {
   color: white;
   text-decoration: none;
-cursor: pointer;
+  cursor: pointer;
 
 }
 

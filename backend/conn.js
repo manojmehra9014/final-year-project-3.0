@@ -10,8 +10,4 @@ mongoose.connect("mongodb+srv://manojmehra:root123@cluster0.rrkz1la.mongodb.net/
 
 
 
-// Usage in your Express.js app or serverless function:
-
-
-// Additional code for your Express.js app
 

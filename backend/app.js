@@ -36,9 +36,15 @@ const CodespaceSchema = new mongoose.Schema({
   css_code: String,
   js_code: String,
 });
-
 // Create the Codespace model
 const Codespace = mongoose.model('Codespace', CodespaceSchema);
+
+
+const adminSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+});
+const Admin = mongoose.model("Admin", adminSchema);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -127,6 +133,16 @@ app.get("/contact", (req, res) => {
   });
 });
 
+app.get('/users', async (req, res) => {
+  try {
+    const users = await Message.find({}, 'name email');
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching users' });
+  }
+});
+
 app.get("/labfiledata", async (req, res) => {
   const filename = req.cookies.getfilecodes;
   const user_id = req.cookies.user_id;
@@ -147,6 +163,24 @@ app.get("/labfiledata", async (req, res) => {
 
 app.get('/lab', async (req, res) => {
   const filePath = path.join(static_path, './components/code_editor/lab.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/showuser', async (req, res) => {
+  const filePath = path.join(static_path, './components/adminpanel/usersdata/index.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/admin', async (req, res) => {
+  const filePath = path.join(static_path, './components/adminpanel/loginadmin/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -209,6 +243,8 @@ app.get("/login", auth, async (req, res) => {
 
 
 
+
+
 app.get("/gettingstart", async (req, res) => {
   const user_id = req.cookies.user_id; // Assuming the user_id is stored in the cookie
 
@@ -244,6 +280,26 @@ app.post("/add", async (req, res) => {
   res.redirect('/login');
 })
 
+app.post("/check-admin", async (req, res) => {
+  const { adminuseremail, adminpassword } = req.body;
+
+  try {
+    const existingUser = await Admin.findOne({ email: adminuseremail });
+
+    if (!existingUser) {
+      return res.status(404).json({ message: 'User not found!' });
+    }
+
+    if (existingUser.password === adminpassword) {
+      res.redirect('/showuser');
+    } else {
+      return res.status(401).json({ message: 'Incorrect password.' });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Something went wrong!' });
+  }
+})
 
 app.post('/check', async (req, res) => {
   const { useremail, password } = req.body;
@@ -1185,8 +1241,179 @@ app.get('/blog.introduction-to-mongodb-atlas-managed-mongodb-service', (req, res
 //nodejs pages 
 
 
-app.get('/blog.', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic3.html');
+app.get('/blog.introduction-to-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic1.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.asynchronous-programming-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic2.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.web-application-development-with-express.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic3.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.database-integration-with-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic4.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.restful-api-development-with-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic5.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.authentication-and-authorization-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic6.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.error-handling-and-debugging-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic7.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.testing-and-test-driven-development-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic7.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.performance-optimization-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic8.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.deployment-and-production-best-practices-for-node.js-applications', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic9.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.file-system-operations-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic10.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.working-with-streams-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic11.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.middleware-and-request-handling-in-express.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic12.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.real-time-communication-with-websockets-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic13.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.background-job-processing-with-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic14.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.caching-and-performance-optimization-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic15.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.security-best-practices-for-node.js-applications', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic16.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.logging-and-monitoring-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic17.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.building-restful-apis-with-hapi.js-or-koa.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic18.html');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error while loading HTML file');
+    }
+  });
+});
+app.get('/blog.integrating-external-services-and-apis-in-node.js', (req, res) => {
+  const filePath = path.join(static_path, './components/courses/node.js/topic19.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
