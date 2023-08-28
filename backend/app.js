@@ -6,13 +6,20 @@ const path = require("path");
 const mongoose = require("mongoose");
 require("./conn");
 const static_path = path.join(__dirname, "../");
-const static_path2 = path.join(__dirname, "../");
+const static_path2 = path.join(__dirname, "../asserts");
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const auth = require("../api/auth");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(static_path2));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use(session({
   secret: 'shhhh',
@@ -46,12 +53,7 @@ const adminSchema = new mongoose.Schema({
 });
 const Admin = mongoose.model("Admin", adminSchema);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(static_path2));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cookieParser());
+
 
 app.get("/", (req, res) => {
   const filePath = path.join(static_path, './index.html');
