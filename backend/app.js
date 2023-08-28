@@ -18,7 +18,7 @@ app.use('/asset', express.static(path.join(static_path, '../assert')));
 app.use('/compoments', express.static(path.join(static_path, '../compoments')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(static_path2));
+app.use(express.static(static_path1));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
