@@ -6,7 +6,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 require("./conn");
 const static_path = path.join(__dirname, "../");
-const static_path2 = path.join(__dirname, "../public");
+const static_path2 = path.join(__dirname, "/public");
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
