@@ -56,7 +56,7 @@ const Admin = mongoose.model("Admin", adminSchema);
 
 
 app.get("/", (req, res) => {
-  const filePath = path.join(static_path, './index.html');
+  const filePath = path.join(static_path, '/public/landingpage/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
