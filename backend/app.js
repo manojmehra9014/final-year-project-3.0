@@ -1,6 +1,7 @@
 const express = require("express");
-const serverless = require('serverless-http');
 const app = express();
+const serverless = require('serverless-http');
+
 const session = require('express-session');
 const path = require("path");
 const mongoose = require("mongoose");
@@ -14,11 +15,9 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const auth = require("../api/auth");
 
-app.use('/asset', express.static(path.join(static_path, '../assert')));
-app.use('/compoments', express.static(path.join(static_path, '../compoments')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(static_path1));
+app.use(express.static(static_path2));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -1433,7 +1432,8 @@ app.get('/blog.integrating-external-services-and-apis-in-node.js', (req, res) =>
 
 app.listen(port, () => {
   console.log("Server is Connected");
-  console.log(`server is working on port number : ${port}`);
+  console.log(`Server is working on port number : ${port}`);
 
 });
 
+module.exports.handler = serverless(app);

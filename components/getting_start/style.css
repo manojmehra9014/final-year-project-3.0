@@ -10,7 +10,8 @@ body {
     background-size: cover;
 
 }
-#prevcodes{
+
+#prevcodes {
     color: crimson;
     font-size: 1.3rem;
     font-family: Caveat;
@@ -138,7 +139,7 @@ h2 {
     font-size: 1.2rem;
 }
 
-#right-section{
+#right-section {
     width: 49vw;
     margin-top: 70px;
     height: 60vh;
@@ -146,25 +147,29 @@ h2 {
     border-radius: 19px;
 }
 
-#left-section{
+#left-section {
     width: 49vw;
 }
 
 
-hr{
-    margin: 8px;
+hr {
+    margin: 10px;
 }
-li{
+
+li {
     border: 1px solid crimson;
-    border-radius: 19px;
+    border-radius: 29px;
+    background-color: rgba(204, 28, 63, 0.219);
     color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     cursor: pointer;
-    padding: 5px;
+    padding: 9px;
     margin: 3px;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
 }

@@ -3,7 +3,7 @@
   "description": "",
   "main": "/backend/app.js",
   "scripts": {
-    "start":"node backend/app.js",
+    "start": "node backend/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon backend/app.js"
   },
@@ -29,7 +29,11 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0",
     "path": "^0.12.7",
+    "serverless": "^3.34.0",
     "serverless-http": "^3.2.0",
     "socket.io": "^4.7.1"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
   }
 }

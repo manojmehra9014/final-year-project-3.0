@@ -11,8 +11,8 @@
 }
 
 .info>img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 
 .info>p {
@@ -24,8 +24,7 @@
 body {
   width: auto;
   height: 100vh;
-  background-color: rgb(26, 25, 25);
-  background: linear-gradient(to top right, rgba(7, 0, 0, 0.596)), rgb(0, 0, 0);
+  background-color: #5d8a79;
 }
 
 #title {
@@ -50,8 +49,14 @@ h1 {
 .header {
   display: flex;
   height: 8vh;
+  background-color: #6ea791b7;
   margin: 1vh 5vw 0 5vw;
+  justify-content: center;
+  align-items:center;
+  padding: 0 40px;
+  border-radius: 10px;
 }
+
 
 table {
   border-collapse: collapse;
@@ -94,7 +99,7 @@ td {
 
 #btn_save {
   margin: auto;
-  width: 20vw;
+  width: 18vw;
 }
 
 .left-section {
@@ -150,13 +155,13 @@ td {
   position: relative;
   resize: none;
   border-radius: 5px;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-family: 'DM Mono', monospace;
 
   font-weight: 600;
   color: rgb(255, 255, 255);
   /* background-color: rgb(49, 195, 253); */
-  background-color: #000000;
+  background-color: #183D3D;
 }
 
 .css-code {
@@ -170,11 +175,11 @@ td {
   position: relative;
   resize: none;
   border-radius: 5px;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: rgb(255, 255, 255);
   /* background-color: rgb(49, 195, 253); */
-  background-color: #000000;
+  background-color: #183D3D;
   font-family: 'DM Mono', monospace;
 
 }
@@ -190,11 +195,11 @@ td {
   border-radius: 5px;
   position: relative;
   resize: none;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #fff;
   font-weight: 600;
   /* background-color: rgb(252, 255, 56); */
-  background-color: #000000;
+  background-color: #183D3D;
   font-family: 'DM Mono', monospace;
 }
 
