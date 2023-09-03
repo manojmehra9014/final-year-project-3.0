@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeks Force | Transactions and Atomicity in MongoDB</title>
+    <link rel="stylesheet" href="/public/components/courses/html/html_course_style.css">
+    <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+    <meta name="author" content="GeeksForce">
+
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="p1 logo">
+                <img src="/public/assert/main_logo.png" alt="Logo">
+                <span>GeeksForce</span>
+            </div>
+            <div class="p2">
+                <div class="links">
+                    <a id="home" href="/">Home</a>
+                    <a href="/blog.html-introduction">HTML</a>
+                    <a href="/blog.introduction-to-css">CSS</a>
+                    <a href="/blog.introduction-to-javascript">JS</a>
+                    <a href="/blog.introduction-to-react">React.JS </a>
+                    <a href="/blog.introduction-to-nodejs">Node.Js</a>
+                    <a href="/blog.introduction-to-mongodb">MongoDB</a>
+                </div>
+            </div>
+            <div class="p3">
+                <button><a target="_blank" href="https://chat.openai.com/">GPT</a></button>
+                <button><a href="">Post</a></button>
+            </div>
+        </nav>
+
+    </div>
+
+
+    <div class="main">
+
+
+
+        <div class="left-section">
+            <ul>
+                <li><a class="a" href="/blog.introduction-to-mongodb">Introduction to MongoDB</a></li>
+                <li><a class="a" href="/blog.installing-and-configuring-mongodb">Installing and Configuring MongoDB</a>
+                </li>
+                <li><a class="a" href="/blog.crud-operations-in-mongodb">CRUD Operations in MongoDB</a></li>
+                <li><a class="a" href="/blog.querying-data-with-mongodb">Querying Data with MongoDB</a></li>
+                <li><a class="a" href="/blog.aggregation-framework-in-mongodb">Aggregation Framework in MongoDB</a></li>
+                <li><a class="a" href="/blog.indexing-and-performance-optimization-in-mongodb">Indexing and Performance
+                        Optimization in MongoDB</a></li>
+                <li><a class="a" href="/blog.working-with-data-models-and-schema-design">Working with Data Models and
+                        Schema Design</a></li>
+                <li><a class="a" href="/blog.data-validation-and-error-handling-in-mongodb">Data Validation and Error
+                        Handling in MongoDB</a></li>
+                <li><a class="a" href="/blog.transactions-and-atomicity-in-mongodb">Transactions and Atomicity in
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.working-with-geospatial-data-in-mongodb">Working with Geospatial Data in
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.replica-sets-and-high-availability-in-mongodb">Replica Sets and High
+                        Availability in MongoDB</a></li>
+                <li><a class="a" href="/blog.sharding-and-scalability-in-mongodb">Sharding and Scalability in
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.backup-and-restore-strategies-in-mongodb">Backup and Restore Strategies in
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.security-and-authentication-in-mongodb">Security and Authentication in
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.monitoring-and-performance-tuning-in-mongodb">Monitoring and Performance
+                        Tuning in MongoDB</a></li>
+                <li><a class="a" href="/blog.deployment-and-operations-of-mongodb">Deployment and Operations of
+                        MongoDB</a></li>
+                <li><a class="a" href="/blog.integrating-mongodb-with-applications">Integrating MongoDB with
+                        Applications</a></li>
+                <li><a class="a" href="/blog.best-practices-for-mongodb-development">Best Practices for MongoDB
+                        Development</a></li>
+                <li><a class="a" href="/blog.real-world-use-cases-and-examples">Real-world Use Cases and Examples</a>
+                </li>
+                <li><a class="a" href="/blog.introduction-to-mongodb-atlas-managed-mongodb-service">Introduction to
+                        MongoDB Atlas (Managed MongoDB Service)</a></li>
+            </ul>
+        </div>
+
+
+        <div class="right-section" id="content">
+            <h1 id="main_heading">Transactions and Atomicity in MongoDB</h1>
+
+            <p>Transactions are an essential feature for ensuring data consistency and integrity in MongoDB. By using
+                multi-document transactions, you can group multiple operations into a single atomic unit of work. This
+                allows you to maintain data integrity even when dealing with complex operations involving multiple
+                documents.</p>
+
+            <h2>Atomicity in MongoDB</h2>
+            <p>In MongoDB, atomicity refers to the property of a transaction where all operations within the transaction
+                are treated as a single indivisible unit. If any operation within a transaction fails, all previous
+                operations within the transaction are rolled back, ensuring that the data remains consistent.</p>
+
+            <h2>Working with Transactions in MongoDB</h2>
+            <p>To work with transactions in MongoDB, you need to consider the following:</p>
+
+            <ul>
+                <li><strong>Session Objects:</strong> Transactions in MongoDB are associated with a session object. You
+                    need to start a session and associate it with your operations to enable transaction support.</li>
+                <li><strong>Transaction Methods:</strong> MongoDB provides methods such as `startTransaction()`,
+                    `commitTransaction()`, and `abortTransaction()` to control the lifecycle of a transaction.</li>
+                <li><strong>Isolation Levels:</strong> MongoDB supports different isolation levels for transactions,
+                    allowing you to control the visibility and behavior of concurrent operations.</li>
+                <li><strong>Error Handling:</strong> Proper error handling and exception management are crucial when
+                    working with transactions. You should handle exceptions and errors effectively to ensure proper
+                    rollback and error recovery.</li>
+            </ul>
+
+            <h2>Example Transaction</h2>
+            <p>Here's an example of a transaction in MongoDB using the Node.js driver:</p>
+
+            <pre><code>
+  const session = client.startSession();
+
+  session.startTransaction();
+
+  try {
+    const collection = session.getDatabase("mydb").collection("mycollection");
+
+    // Perform transactional operations
+    collection.insertOne({ name: "John" });
+    collection.updateOne({ name: "John" }, { $set: { age: 30 } });
+
+    // Commit the transaction
+    session.commitTransaction();
+  } catch (error) {
+    // Handle transaction error
+    console.error("Transaction failed:", error);
+    session.abortTransaction();
+  } finally {
+    // End the session
+    session.endSession();
+  }
+  </code></pre>
+
+            <p>In this example, a session is started, and a transaction is initiated. Transactional operations like
+                inserting and updating documents are performed within the transaction. If any error occurs, the
+                transaction is aborted; otherwise, it is committed. Finally, the session is ended.</p>
+
+            <!-- Additional content or resources -->
+            <h2>Additional Content or Resources</h2>
+            <p>Feel free to add any additional information, tips, or resources related to Transactions and Atomicity in
+                MongoDB. You can include links to relevant tutorials, examples, or official documentation to provide
+                more in-depth knowledge to your readers.</p>
+
+        </div>
+
+
+</body>
+
+</html>

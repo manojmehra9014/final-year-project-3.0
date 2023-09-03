@@ -6,11 +6,11 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0 10vw;
 }
 
-.dark-mode{
+.dark-mode {
     background-color: #180e0e;
     color: #f9f9f9;
 }
@@ -39,7 +39,7 @@ nav {
 }
 
 .logo {
-    font-family: kalam , 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: kalam, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     font-weight: 800;
 }
@@ -119,7 +119,7 @@ button>a {
 
 .left-upper {
     height: 60%;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .left-bottom {
@@ -138,7 +138,7 @@ button>a {
 }
 
 .right-section {
-    background-image: url(./assert/Image.png);
+    background-image: url(/public/assert/Image.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -225,7 +225,7 @@ button>a {
     margin-right: 1rem;
 }
 
-.btn-course{
+.btn-course {
     width: 40%;
     height: 15%;
     margin: 0 30%;
@@ -235,7 +235,8 @@ button>a {
     justify-content: center;
     align-items: center;
 }
-.btn-course>a{
+
+.btn-course>a {
     text-decoration: none;
     margin: auto;
     padding: auto;
@@ -271,28 +272,29 @@ button>a {
     margin: auto;
 }
 
-.hero3-left{
+.hero3-left {
     width: 60%;
     margin: auto;
 }
 
-.c1>a{
+.c1>a {
     text-decoration: none;
     color: #000000;
 }
 
-.c1{
+.c1 {
     border: 1px solid rgb(62, 223, 223);
 }
 
-.c1:hover{
+.c1:hover {
     background-color: crimson;
-    >a{
+
+    >a {
         color: white;
     }
 }
 
-.c1{
+.c1 {
     text-align: center;
     padding: 5px 5px;
     background-color: #fff;
@@ -307,29 +309,31 @@ button>a {
     transition: all 0.5s;
 }
 
-.h3-h3{
+.h3-h3 {
     margin-top: 20vh;
 }
 
-.up{
+.up {
     height: 60%;
     margin-top: 3vh;
     margin: auto;
     justify-content: center;
     align-items: center;
-    background-image: url(/assert/undraw_software_engineer_re_tnjc.svg);
+    background-image: url(/public/assert/undraw_software_engineer_re_tnjc.svg);
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
 }
-.hero3-right{
+
+.hero3-right {
     margin-top: 10vh;
     margin-right: 2vw;
     width: 40%;
 }
 
-.down{
+.down {
     text-align: center;
 }
+
 footer {
     height: 50vh;
     display: flex;
@@ -384,7 +388,8 @@ footer>div {
 .f-right>h5 {
     margin: 1vh 0;
 }
-#html-cou{
+
+#html-cou {
     text-decoration: none;
     color: white;
 }
@@ -421,7 +426,7 @@ footer>div {
 .h4-img {
     height: 30vh;
     width: 23vw;
-    background-image: url(./assert/landing_assert/my_photo.jpg);
+    background-image: url(/public/assert/landing_assert/my_photo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -441,7 +446,7 @@ footer>div {
     height: 45vh;
     margin: 2vh 2vh;
     width: 60%;
-    background-image: url(./assert/undraw_software_engineer_re_tnjc.svg);
+    background-image: url(/public/assert/undraw_software_engineer_re_tnjc.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 8vw 0;
@@ -452,6 +457,7 @@ footer>div {
     cursor: pointer;
     display: none;
 }
+
 header .header-right .hamburger div {
     width: 30px;
     height: 2px;
@@ -459,193 +465,201 @@ header .header-right .hamburger div {
     background: #fff;
 }
 
-    @media only screen and (max-width: 768px) {
-        /* Adjust font size for smaller screens */
+@media only screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
 
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body{
-            margin: 0;
-        }
-        nav{
-            height: 10vh;
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    nav {
+        height: 10vh;
+    }
+
+    .p3>button {
+        width: 45px;
+
+    }
+
+    .hero {
+        margin-top: 1px;
+    }
+
+    .logo>img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .left-upper {
+        height: 20vh;
+    }
+
+    .left-bottom {
+        height: 10vh;
+    }
+
+    .logo>h2 {
+        font-size: 1.3rem;
+        margin-left: 5px;
+    }
+
+    .links>a {
+        font-size: 0.6rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    #learning {
+        font-size: 0.9rem;
+    }
+
+    .p1 {
+        width: 10vw;
+        margin: 0 5vw;
+    }
+
+    .p2 {
+        width: 60vw;
+        margin: 0 5vw;
+    }
+
+    .p3 {
+        width: 25vw;
+        display: flex;
+        margin: 0 5vw;
+    }
+
+    .left-bottom>button {
+        width: 25vw;
+    }
+
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        min-width: 160px;
+        padding: 10px 0;
+    }
+
+    .hero2 {
+        height: 3vh;
+    }
+
+    .hero2>h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero2>img {
+        width: 20px;
+    }
+
+    .carousel-items>img {
+        width: 60px;
+        height: 60px;
+
+    }
+
+    .carousel-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-prev {
+        width: 30px;
+        height: 30px;
+    }
+
+    #l-header {
+        font-size: 1.3rem;
+    }
+
+    .hero3 {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5vh;
+    }
+
+    .hero3-left {
+        display: block;
+    }
+
+    .hero3-right {
+        display: block;
+        margin: auto;
+        margin-top: 5vh;
+        text-align: center;
+    }
+
+    .down {
+        display: none;
+    }
+
+    .hero4 {
+        display: block;
+
+    }
+
+    .h4-left {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    .h4-img {
+        width: 90vw;
+        height: 40vh;
+        margin: auto;
+        justify-content: center;
+        background-size: contain;
+    }
+
+    .h4-heading {
+        margin-top: 2px;
+        margin: auto;
+    }
+
+    .h4-right {
+        display: none;
+    }
+
+    footer {
+
+        >f-left,
+        f-center {
+            display: inline-flex;
         }
 
-        .p3>button{
-            width: 45px;
+    }
 
-        }
-
-        .hero{
-            margin-top: 1px;
-        }
-
-        .logo>img{
-            width: 30px;
-            height: 30px;
-        }
-
-        .left-upper{
-            height: 20vh;
-        }
-
-        .left-bottom{
-            height: 10vh;
-        }
-        .logo>h2{
-            font-size: 1.3rem;
-            margin-left: 5px;
-        }
-
-        .links>a{
-            font-size: 0.6rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-        }
-
-        h4 {
-            font-size: 0.9rem;
-        }
-
-        p{
-            font-size: 0.9rem;
-        }
-
-        #learning{
-            font-size: 0.9rem;
-        }
-
-        .p1{
-            width: 10vw;
-            margin: 0 5vw;
-        }
-        
-        .p2{
-            width: 60vw;
-            margin: 0 5vw;
-        }
-        
-        .p3{
-            width: 25vw;
-            display: flex;
-            margin: 0 5vw;
-        }
-
-        .left-bottom>button{
-            width: 25vw;
-        }
-
-        .links {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background-color: #f9f9f9;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          min-width: 160px;
-          padding: 10px 0;
-        }     
-
-        .hero2{
-            height: 3vh;
-        }
-
-        .hero2>h1{
-            font-size: 1.2rem;
-        }
-
-        .hero2>img{
-            width: 20px;
-        }
-
-        .carousel-items>img{
-            width: 60px;
-            height: 60px;
-
-        }
-
-        .carousel-next{
-            width: 30px;
-            height: 30px;
-        }
-    
-        .carousel-prev{
-            width: 30px;
-            height: 30px;
-        }
-
-        #l-header{
-            font-size: 1.3rem;
-        }
-
-        .hero3{
-            display: block;
-            justify-content: center;
-            align-items: center;
-            margin-top: 5vh;
-        }
-
-        .hero3-left{
-            display: block;
-        }
-
-        .hero3-right{
-            display: block;
-            margin: auto;
-            margin-top: 5vh;
-            text-align: center;
-        }
-        .down{
-            display: none;
-        }
-
-        .hero4{
-            display: block;
-
-        }
-
-        .h4-left{
-            width: 90vw;
-            height: 70vh;
-        }
-        .h4-img{
-            width: 90vw;
-            height: 40vh;
-            margin: auto;
-            justify-content: center;
-            background-size: contain;
-        }
-        .h4-heading{
-            margin-top: 2px;
-            margin: auto;
-        }
-
-        .h4-right{
-            display: none;
-        }
-
-        footer{
-            >f-left,f-center{
-                display: inline-flex;
-            }
-
-        }
-        .f-right{
-            display: none;
-        }
-}    
-          
+    .f-right {
+        display: none;
+    }
+}

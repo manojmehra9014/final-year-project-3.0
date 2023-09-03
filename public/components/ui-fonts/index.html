@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Font Styles</title>
+  <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .font-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+
+    }
+
+    .font-style {
+      margin: 20px;
+      font-size: 24px;
+      padding: 5px 20px;
+      cursor: pointer;
+      border: 1px solid rgb(167, 163, 163);
+      border-radius: 19px;
+
+    }
+
+    .copy-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Font Styles</h1>
+  <div class="font-container">
+    <div class="font-style" style="font-family: Arial, sans-serif;" onclick="copyFontStyle(this)">Arial</div>
+    <div class="font-style" style="font-family: Verdana, sans-serif;" onclick="copyFontStyle(this)">Verdana</div>
+    <div class="font-style" style="font-family: Helvetica, sans-serif;" onclick="copyFontStyle(this)">Helvetica</div>
+    <div class="font-style" style="font-family: Times New Roman, serif;" onclick="copyFontStyle(this)">Times New Roman
+    </div>
+    <div class="font-style" style="font-family: Georgia, serif;" onclick="copyFontStyle(this)">Georgia</div>
+    <div class="font-style" style="font-family: Impact, sans-serif;" onclick="copyFontStyle(this)">Impact</div>
+    <div class="font-style" style="font-family: Comic Sans MS, cursive;" onclick="copyFontStyle(this)">Comic Sans MS
+    </div>
+    <div class="font-style" style="font-family: Tahoma, sans-serif;" onclick="copyFontStyle(this)">Tahoma</div>
+    <div class="font-style" style="font-family: Lucida Console, monospace;" onclick="copyFontStyle(this)">Lucida Console
+    </div>
+    <div class="font-style" style="font-family: Courier New, monospace;" onclick="copyFontStyle(this)">Courier New</div>
+    <div class="font-style" style="font-family: Palatino Linotype, serif;" onclick="copyFontStyle(this)">Palatino
+      Linotype</div>
+    <div class="font-style" style="font-family: Brush Script MT, cursive;" onclick="copyFontStyle(this)">Brush Script MT
+    </div>
+    <div class="font-style" style="font-family: Calibri, sans-serif;" onclick="copyFontStyle(this)">Calibri</div>
+    <div class="font-style" style="font-family: Garamond, serif;" onclick="copyFontStyle(this)">Garamond</div>
+    <div class="font-style" style="font-family: Arial Black, sans-serif;" onclick="copyFontStyle(this)">Arial Black
+    </div>
+    <div class="font-style" style="font-family: Cambria, serif;" onclick="copyFontStyle(this)">Cambria</div>
+    <div class="font-style" style="font-family: Bookman Old Style, serif;" onclick="copyFontStyle(this)">Bookman Old
+      Style</div>
+    <div class="font-style" style="font-family: Century Gothic, sans-serif;" onclick="copyFontStyle(this)">Century
+      Gothic</div>
+    <div class="font-style" style="font-family: Franklin Gothic Medium, sans-serif;" onclick="copyFontStyle(this)">
+      Franklin Gothic Medium</div>
+    <div class="font-style" style="font-family: Copperplate Gothic Light, sans-serif;" onclick="copyFontStyle(this)">
+      Copperplate Gothic Light</div>
+  </div>
+
+  <script>
+    function copyFontStyle(element) {
+      const fontStyle = element.style.fontFamily;
+      const cssLink = `@import url('https://fonts.googleapis.com/css2?family=${fontStyle.replace(/ /g, '+')}&display=swap');`;
+      copyToClipboard(cssLink);
+      alert('CSS link copied to clipboard!');
+    }
+
+    function copyToClipboard(text) {
+      const tempInput = document.createElement('input');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+    }
+  </script>
+</body>
+
+</html>

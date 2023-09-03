@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
 const serverless = require('serverless-http');
-
 const session = require('express-session');
 const path = require("path");
 const mongoose = require("mongoose");
 require("./conn");
 const static_path = path.join(__dirname, "../");
-const static_path2 = path.join(__dirname, "../");
+const static_path2 = path.join(__dirname, "../public");
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
@@ -66,7 +65,7 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/color-paletters", (req, res) => {
-  const filePath = path.join(static_path, './components/color-paletters/index.html');
+  const filePath = path.join(static_path, './public/components/color-paletters/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -75,7 +74,7 @@ app.get("/color-paletters", (req, res) => {
   });
 });
 app.get("/css-gradient", (req, res) => {
-  const filePath = path.join(static_path, './components/css-gradient/index.html');
+  const filePath = path.join(static_path, './public/components/css-gradient/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -84,7 +83,7 @@ app.get("/css-gradient", (req, res) => {
   });
 });
 app.get("/ui-fonts", (req, res) => {
-  const filePath = path.join(static_path, './components/ui-fonts/index.html');
+  const filePath = path.join(static_path, './public/components/ui-fonts/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -96,7 +95,7 @@ app.get("/ui-fonts", (req, res) => {
 
 
 app.get("/ui-icons", (req, res) => {
-  const filePath = path.join(static_path, './components/ui-icons/index.html');
+  const filePath = path.join(static_path, './public/components/ui-icons/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -106,7 +105,7 @@ app.get("/ui-icons", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  const filePath = path.join(static_path, './components/nav_links/about.html');
+  const filePath = path.join(static_path, './public/components/nav_links/about.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -117,7 +116,7 @@ app.get("/about", (req, res) => {
 
 
 app.get("/tools", (req, res) => {
-  const filePath = path.join(static_path, './components/nav_links/tools.html');
+  const filePath = path.join(static_path, './public/components/nav_links/tools.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -127,7 +126,7 @@ app.get("/tools", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  const filePath = path.join(static_path, './components/nav_links/contact.html');
+  const filePath = path.join(static_path, './public/components/nav_links/contact.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -165,7 +164,7 @@ app.get("/labfiledata", async (req, res) => {
 });
 
 app.get('/lab', async (req, res) => {
-  const filePath = path.join(static_path, './components/code_editor/lab.html');
+  const filePath = path.join(static_path, './public/components/code_editor/lab.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -174,7 +173,7 @@ app.get('/lab', async (req, res) => {
   });
 });
 app.get('/showuser', async (req, res) => {
-  const filePath = path.join(static_path, './components/adminpanel/usersdata/index.html');
+  const filePath = path.join(static_path, './public/components/adminpanel/usersdata/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -183,7 +182,7 @@ app.get('/showuser', async (req, res) => {
   });
 });
 app.get('/admin', async (req, res) => {
-  const filePath = path.join(static_path, './components/adminpanel/loginadmin/index.html');
+  const filePath = path.join(static_path, './public/components/adminpanel/loginadmin/index.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -194,7 +193,7 @@ app.get('/admin', async (req, res) => {
 
 
 app.get("/html_course", (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/html_course.html');
+  const filePath = path.join(static_path, './public/components/courses/html/html_course.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -204,7 +203,7 @@ app.get("/html_course", (req, res) => {
 });
 
 app.get("/css_course", (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/css_course.html');
+  const filePath = path.join(static_path, './public/components/courses/css/css_course.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -214,7 +213,7 @@ app.get("/css_course", (req, res) => {
 });
 
 app.get("/js_course", (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/js_course.html');
+  const filePath = path.join(static_path, './public/components/courses/js/js_course.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -224,7 +223,7 @@ app.get("/js_course", (req, res) => {
 });
 
 app.get("/react_course", (req, res) => {
-  const filePath = path.join(static_path, './components/courses/react/react_course.html');
+  const filePath = path.join(static_path, './public/components/courses/react/react_course.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -235,7 +234,7 @@ app.get("/react_course", (req, res) => {
 
 
 app.get("/login", auth, async (req, res) => {
-  const filePath = path.join(static_path, './components/login_register/login_reg.html');
+  const filePath = path.join(static_path, './public/components/login_register/login_reg.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -256,7 +255,7 @@ app.get("/gettingstart", async (req, res) => {
   // Get an array of filenames
   const filenames = files.map(file => file.filename);
   // Render the files.ejs template and pass the filenamesHTML data
-  res.render(path.join(static_path, './components/getting_start/index.ejs'), { filenames });
+  res.render(path.join(static_path, './public/components/getting_start/index.ejs'), { filenames });
 
 });
 
@@ -391,7 +390,7 @@ app.post('/savecodes', async (req, res) => {
 
 
 app.get('/blog.html-introduction', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic1.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic1.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -401,7 +400,7 @@ app.get('/blog.html-introduction', (req, res) => {
 });
 
 app.get('/blog.html-basic', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic2.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic2.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -411,7 +410,7 @@ app.get('/blog.html-basic', (req, res) => {
 });
 
 app.get('/blog.html-element', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic3.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic3.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -421,7 +420,7 @@ app.get('/blog.html-element', (req, res) => {
 });
 
 app.get('/blog.html-attributes', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic4.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic4.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -431,7 +430,7 @@ app.get('/blog.html-attributes', (req, res) => {
 });
 
 app.get('/blog.html-headings', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic5.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic5.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -441,7 +440,7 @@ app.get('/blog.html-headings', (req, res) => {
 });
 
 app.get('/blog.html-paragraphs', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic6.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic6.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -451,7 +450,7 @@ app.get('/blog.html-paragraphs', (req, res) => {
 });
 
 app.get('/blog.html-formating', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic8.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic8.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -461,7 +460,7 @@ app.get('/blog.html-formating', (req, res) => {
 });
 
 app.get('/blog.html-styles', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -471,7 +470,7 @@ app.get('/blog.html-styles', (req, res) => {
 });
 
 app.get('/blog.html-comment', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic9.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic9.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -481,7 +480,7 @@ app.get('/blog.html-comment', (req, res) => {
 });
 
 app.get('/blog.html-color', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic10.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic10.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -491,7 +490,7 @@ app.get('/blog.html-color', (req, res) => {
 });
 
 app.get('/blog.html-links', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic11.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic11.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -501,7 +500,7 @@ app.get('/blog.html-links', (req, res) => {
 });
 
 app.get('/blog.html-images', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic12.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic12.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -511,7 +510,7 @@ app.get('/blog.html-images', (req, res) => {
 });
 
 app.get('/blog.html-favicon', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic13.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic13.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -521,7 +520,7 @@ app.get('/blog.html-favicon', (req, res) => {
 });
 
 app.get('/blog.html-blocks-inline', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic14.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic14.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -531,7 +530,7 @@ app.get('/blog.html-blocks-inline', (req, res) => {
 });
 
 app.get('/blog.html-classes', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic15.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic15.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -541,7 +540,7 @@ app.get('/blog.html-classes', (req, res) => {
 });
 
 app.get('/blog.html-id', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/html/topic16.html');
+  const filePath = path.join(static_path, './public/components/courses/html/topic16.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -555,7 +554,7 @@ app.get('/blog.html-id', (req, res) => {
 //css-links-responder
 
 app.get('/blog.introduction-to-css', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic1.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic1.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -565,7 +564,7 @@ app.get('/blog.introduction-to-css', (req, res) => {
 });
 
 app.get('/blog.selectors-and-specticificity', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic2.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic2.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -575,7 +574,7 @@ app.get('/blog.selectors-and-specticificity', (req, res) => {
 });
 
 app.get('/blog.box-model', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic3.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic3.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -585,7 +584,7 @@ app.get('/blog.box-model', (req, res) => {
 });
 
 app.get('/blog.display-and-positioning', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic4.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic4.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -595,7 +594,7 @@ app.get('/blog.display-and-positioning', (req, res) => {
 });
 
 app.get('/blog.css-typrography', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic5.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic5.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -605,7 +604,7 @@ app.get('/blog.css-typrography', (req, res) => {
 });
 
 app.get('/blog.colors-and-backgrounds', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic6.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic6.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -615,7 +614,7 @@ app.get('/blog.colors-and-backgrounds', (req, res) => {
 });
 
 app.get('/blog.css-layout-techniques', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -625,7 +624,7 @@ app.get('/blog.css-layout-techniques', (req, res) => {
 });
 
 app.get('/blog.media-queries', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic8.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic8.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -635,7 +634,7 @@ app.get('/blog.media-queries', (req, res) => {
 });
 
 app.get('/blog.css-frameworks', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic9.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic9.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -645,7 +644,7 @@ app.get('/blog.css-frameworks', (req, res) => {
 });
 
 app.get('/blog.css-preprocessors', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic10.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic10.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -655,7 +654,7 @@ app.get('/blog.css-preprocessors', (req, res) => {
 });
 
 app.get('/blog.css-animations', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic11.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic11.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -666,7 +665,7 @@ app.get('/blog.css-animations', (req, res) => {
 
 
 app.get('/blog.css=naming-convention', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic12.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic12.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -676,7 +675,7 @@ app.get('/blog.css=naming-convention', (req, res) => {
 });
 
 app.get('/blog.debugging-troubleshooting', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic13.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic13.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -686,7 +685,7 @@ app.get('/blog.debugging-troubleshooting', (req, res) => {
 });
 
 app.get('/blog.browser-compatibility', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic14.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic14.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -696,7 +695,7 @@ app.get('/blog.browser-compatibility', (req, res) => {
 });
 
 app.get('/blog.performance-optimization', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic15.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic15.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -706,7 +705,7 @@ app.get('/blog.performance-optimization', (req, res) => {
 });
 
 app.get('/blog.css-flexbox', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic16.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic16.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -716,7 +715,7 @@ app.get('/blog.css-flexbox', (req, res) => {
 });
 
 app.get('/blog.css-grid', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic17.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic17.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -726,7 +725,7 @@ app.get('/blog.css-grid', (req, res) => {
 });
 
 app.get('/blog.css-advance', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/css/topic18.html');
+  const filePath = path.join(static_path, './public/components/courses/css/topic18.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -744,7 +743,7 @@ app.get('/blog.css-advance', (req, res) => {
 
 
 app.get('/blog.introduction-to-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic1.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic1.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -754,7 +753,7 @@ app.get('/blog.introduction-to-javascript', (req, res) => {
 });
 
 app.get('/blog.javascript-basics-and-syntax', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic2.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic2.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -764,7 +763,7 @@ app.get('/blog.javascript-basics-and-syntax', (req, res) => {
 });
 
 app.get('/blog.working-with-variables-and-data-types', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic3.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic3.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -774,7 +773,7 @@ app.get('/blog.working-with-variables-and-data-types', (req, res) => {
 });
 
 app.get('/blog.operators-and-expressions-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic4.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic4.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -783,7 +782,7 @@ app.get('/blog.operators-and-expressions-in-javascript', (req, res) => {
   });
 });
 app.get('/blog.control-flow-and-conditional-statements', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic5.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic5.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -793,7 +792,7 @@ app.get('/blog.control-flow-and-conditional-statements', (req, res) => {
 });
 
 app.get('/blog.looping-and-iteration', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic6.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic6.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -803,7 +802,7 @@ app.get('/blog.looping-and-iteration', (req, res) => {
 });
 
 app.get('/blog.functions-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -813,7 +812,7 @@ app.get('/blog.functions-in-javascript', (req, res) => {
 });
 
 app.get('/blog.scope-and-closures', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic8.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic8.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -823,7 +822,7 @@ app.get('/blog.scope-and-closures', (req, res) => {
 });
 
 app.get('/blog.arrays-and-array-manipulation', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic9.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic9.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -833,7 +832,7 @@ app.get('/blog.arrays-and-array-manipulation', (req, res) => {
 });
 
 app.get('/blog.objects-and-object-oriented-programming-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic10.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic10.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -843,7 +842,7 @@ app.get('/blog.objects-and-object-oriented-programming-in-javascript', (req, res
 });
 
 app.get('/blog.manipulating-the-document-object-model', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic11.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic11.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -853,7 +852,7 @@ app.get('/blog.manipulating-the-document-object-model', (req, res) => {
 });
 
 app.get('/blog.event-handling-and-interaction', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic12.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic12.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -863,7 +862,7 @@ app.get('/blog.event-handling-and-interaction', (req, res) => {
 });
 
 app.get('/blog.asynchronous-javascript-and-callbacks', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic13.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic13.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -873,7 +872,7 @@ app.get('/blog.asynchronous-javascript-and-callbacks', (req, res) => {
 });
 
 app.get('/blog.promises-and-async-await', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic14.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic14.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -883,7 +882,7 @@ app.get('/blog.promises-and-async-await', (req, res) => {
 });
 
 app.get('/blog.error-handling-and-debugging', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic15.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic15.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -893,7 +892,7 @@ app.get('/blog.error-handling-and-debugging', (req, res) => {
 });
 
 app.get('/blog.modules-and-modular-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic16.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic16.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -903,7 +902,7 @@ app.get('/blog.modules-and-modular-javascript', (req, res) => {
 });
 
 app.get('/blog.es6+-features-and-updates', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic17.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic17.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -913,7 +912,7 @@ app.get('/blog.es6+-features-and-updates', (req, res) => {
 });
 
 app.get('/blog.regular-expressions-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic18.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic18.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -923,7 +922,7 @@ app.get('/blog.regular-expressions-in-javascript', (req, res) => {
 });
 
 app.get('/blog.working-with-json-data', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic19.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic19.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err); 0
@@ -933,7 +932,7 @@ app.get('/blog.working-with-json-data', (req, res) => {
 });
 
 app.get('/blog.making-http-requests-with-fetch-api', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic20.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic20.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -943,7 +942,7 @@ app.get('/blog.making-http-requests-with-fetch-api', (req, res) => {
 });
 
 app.get('/blog.client-side-storage', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic21.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic21.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -953,7 +952,7 @@ app.get('/blog.client-side-storage', (req, res) => {
 });
 
 app.get('/blog.introduction-to-javascript-testing', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic22.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic22.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -963,7 +962,7 @@ app.get('/blog.introduction-to-javascript-testing', (req, res) => {
 });
 
 app.get('/blog.security-best-practices-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic23.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic23.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -973,7 +972,7 @@ app.get('/blog.security-best-practices-in-javascript', (req, res) => {
 });
 
 app.get('/blog.introduction-to-javascript-frameworks', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic24.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic24.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -983,7 +982,7 @@ app.get('/blog.introduction-to-javascript-frameworks', (req, res) => {
 });
 
 app.get('/blog.building-single-page-applications-with-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic25.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic25.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -993,7 +992,7 @@ app.get('/blog.building-single-page-applications-with-javascript', (req, res) =>
 });
 
 app.get('/blog.working-with-apis-and-restful-services', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic26.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic26.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1003,7 +1002,7 @@ app.get('/blog.working-with-apis-and-restful-services', (req, res) => {
 });
 
 app.get('/blog.introduction-to-node.js-and-server-side-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic27.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic27.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1013,7 +1012,7 @@ app.get('/blog.introduction-to-node.js-and-server-side-javascript', (req, res) =
 });
 
 app.get('/blog.working-with-databases-in-javascript', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic28.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic28.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1023,7 +1022,7 @@ app.get('/blog.working-with-databases-in-javascript', (req, res) => {
 });
 
 app.get('/blog.performance-optimization-techniques', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/js/topic29.html');
+  const filePath = path.join(static_path, './public/components/courses/js/topic29.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1039,7 +1038,7 @@ app.get('/blog.performance-optimization-techniques', (req, res) => {
 
 
 app.get('/blog.introduction-to-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic1.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic1.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1048,7 +1047,7 @@ app.get('/blog.introduction-to-mongodb', (req, res) => {
   });
 });
 app.get('/blog.installing-and-configuring-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic2.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic2.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1058,7 +1057,7 @@ app.get('/blog.installing-and-configuring-mongodb', (req, res) => {
 });
 
 app.get('/blog.crud-operations-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic3.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic3.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1068,7 +1067,7 @@ app.get('/blog.crud-operations-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.querying-data-with-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic4.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic4.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1078,7 +1077,7 @@ app.get('/blog.querying-data-with-mongodb', (req, res) => {
 });
 
 app.get('/blog.aggregation-framework-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic5.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic5.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1088,7 +1087,7 @@ app.get('/blog.aggregation-framework-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.indexing-and-performance-optimization-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic6.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic6.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1098,7 +1097,7 @@ app.get('/blog.indexing-and-performance-optimization-in-mongodb', (req, res) => 
 });
 
 app.get('/blog.working-with-data-models-and-schema-design', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1108,7 +1107,7 @@ app.get('/blog.working-with-data-models-and-schema-design', (req, res) => {
 });
 
 app.get('/blog.data-validation-and-error-handling-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic8.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic8.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1118,7 +1117,7 @@ app.get('/blog.data-validation-and-error-handling-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.transactions-and-atomicity-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic9.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic9.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1128,7 +1127,7 @@ app.get('/blog.transactions-and-atomicity-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.working-with-geospatial-data-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic10.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic10.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1138,7 +1137,7 @@ app.get('/blog.working-with-geospatial-data-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.replica-sets-and-high-availability-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic11.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic11.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1148,7 +1147,7 @@ app.get('/blog.replica-sets-and-high-availability-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.sharding-and-scalability-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic12.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic12.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1158,7 +1157,7 @@ app.get('/blog.sharding-and-scalability-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.backup-and-restore-strategies-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic13.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic13.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1168,7 +1167,7 @@ app.get('/blog.backup-and-restore-strategies-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.security-and-authentication-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic14.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic14.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1178,7 +1177,7 @@ app.get('/blog.security-and-authentication-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.monitoring-and-performance-tuning-in-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic15.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic15.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1188,7 +1187,7 @@ app.get('/blog.monitoring-and-performance-tuning-in-mongodb', (req, res) => {
 });
 
 app.get('/blog.deployment-and-operations-of-mongodb', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic16.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic16.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1198,7 +1197,7 @@ app.get('/blog.deployment-and-operations-of-mongodb', (req, res) => {
 });
 
 app.get('/blog.integrating-mongodb-with-applications', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1208,7 +1207,7 @@ app.get('/blog.integrating-mongodb-with-applications', (req, res) => {
 });
 
 app.get('/blog.best-practices-for-mongodb-development', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic18.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic18.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1218,7 +1217,7 @@ app.get('/blog.best-practices-for-mongodb-development', (req, res) => {
 });
 
 app.get('/blog.real-world-use-cases-and-examples', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic19.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic19.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1228,7 +1227,7 @@ app.get('/blog.real-world-use-cases-and-examples', (req, res) => {
 });
 
 app.get('/blog.introduction-to-mongodb-atlas-managed-mongodb-service', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/mongodb/topic20.html');
+  const filePath = path.join(static_path, './public/components/courses/mongodb/topic20.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1245,7 +1244,7 @@ app.get('/blog.introduction-to-mongodb-atlas-managed-mongodb-service', (req, res
 
 
 app.get('/blog.introduction-to-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic1.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic1.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1254,7 +1253,7 @@ app.get('/blog.introduction-to-node.js', (req, res) => {
   });
 });
 app.get('/blog.asynchronous-programming-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic2.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic2.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1263,7 +1262,7 @@ app.get('/blog.asynchronous-programming-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.web-application-development-with-express.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic3.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic3.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1272,7 +1271,7 @@ app.get('/blog.web-application-development-with-express.js', (req, res) => {
   });
 });
 app.get('/blog.database-integration-with-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic4.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic4.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1281,7 +1280,7 @@ app.get('/blog.database-integration-with-node.js', (req, res) => {
   });
 });
 app.get('/blog.restful-api-development-with-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic5.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic5.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1290,7 +1289,7 @@ app.get('/blog.restful-api-development-with-node.js', (req, res) => {
   });
 });
 app.get('/blog.authentication-and-authorization-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic6.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic6.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1299,7 +1298,7 @@ app.get('/blog.authentication-and-authorization-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.error-handling-and-debugging-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1308,7 +1307,7 @@ app.get('/blog.error-handling-and-debugging-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.testing-and-test-driven-development-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic7.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic7.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1317,7 +1316,7 @@ app.get('/blog.testing-and-test-driven-development-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.performance-optimization-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic8.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic8.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1326,7 +1325,7 @@ app.get('/blog.performance-optimization-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.deployment-and-production-best-practices-for-node.js-applications', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic9.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic9.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1335,7 +1334,7 @@ app.get('/blog.deployment-and-production-best-practices-for-node.js-applications
   });
 });
 app.get('/blog.file-system-operations-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic10.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic10.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1344,7 +1343,7 @@ app.get('/blog.file-system-operations-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.working-with-streams-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic11.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic11.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1353,7 +1352,7 @@ app.get('/blog.working-with-streams-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.middleware-and-request-handling-in-express.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic12.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic12.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1362,7 +1361,7 @@ app.get('/blog.middleware-and-request-handling-in-express.js', (req, res) => {
   });
 });
 app.get('/blog.real-time-communication-with-websockets-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic13.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic13.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1371,7 +1370,7 @@ app.get('/blog.real-time-communication-with-websockets-in-node.js', (req, res) =
   });
 });
 app.get('/blog.background-job-processing-with-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic14.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic14.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1380,7 +1379,7 @@ app.get('/blog.background-job-processing-with-node.js', (req, res) => {
   });
 });
 app.get('/blog.caching-and-performance-optimization-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic15.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic15.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1389,7 +1388,7 @@ app.get('/blog.caching-and-performance-optimization-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.security-best-practices-for-node.js-applications', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic16.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic16.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1398,7 +1397,7 @@ app.get('/blog.security-best-practices-for-node.js-applications', (req, res) => 
   });
 });
 app.get('/blog.logging-and-monitoring-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic17.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic17.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1407,7 +1406,7 @@ app.get('/blog.logging-and-monitoring-in-node.js', (req, res) => {
   });
 });
 app.get('/blog.building-restful-apis-with-hapi.js-or-koa.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic18.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic18.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1416,7 +1415,7 @@ app.get('/blog.building-restful-apis-with-hapi.js-or-koa.js', (req, res) => {
   });
 });
 app.get('/blog.integrating-external-services-and-apis-in-node.js', (req, res) => {
-  const filePath = path.join(static_path, './components/courses/node.js/topic19.html');
+  const filePath = path.join(static_path, './public/components/courses/node.js/topic19.html');
   res.sendFile(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -1424,11 +1423,6 @@ app.get('/blog.integrating-external-services-and-apis-in-node.js', (req, res) =>
     }
   });
 });
-
-
-
-
-
 
 app.listen(port, () => {
   console.log("Server is Connected");

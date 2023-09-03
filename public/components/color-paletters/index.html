@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Color Palette</title>
+  <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+  <style>
+    .color-box {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 10px;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .color-value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 14px;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      white-space: nowrap;
+    }
+
+    .color-box:hover .color-value {
+      opacity: 1;
+    }
+
+    section {
+      margin: 0 5vw;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+
+    <div id="color-palette">
+      <!-- Color boxes will be dynamically generated here -->
+    </div>
+  </section>
+
+  <script>
+    // Array to store generated colors
+    var generatedColors = [];
+
+    // Function to create color boxes
+    function createColorBoxes() {
+      var colorPalette = document.getElementById('color-palette');
+
+      for (var i = 0; i < 100; i++) {
+        var colorBox = document.createElement('div');
+        colorBox.className = 'color-box';
+        colorBox.style.backgroundColor = generateUniqueColor();
+
+        var colorValue = document.createElement('div');
+        colorValue.className = 'color-value';
+        colorValue.innerHTML = 'Copy';
+
+        colorBox.appendChild(colorValue);
+        colorPalette.appendChild(colorBox);
+
+        colorBox.addEventListener('click', function (event) {
+          copyColorValue(event.target);
+        });
+      }
+    }
+
+    // Function to generate a unique random color in hexadecimal format
+    function generateUniqueColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      var isDuplicate = true;
+
+      while (isDuplicate) {
+        color = '#';
+
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        isDuplicate = generatedColors.includes(color);
+      }
+
+      generatedColors.push(color);
+      return color;
+    }
+
+    // Function to copy the color value to the clipboard and change the text
+    function copyColorValue(element) {
+      var colorValue = element.style.backgroundColor;
+      var tempInput = document.createElement('input');
+      document.body.appendChild(tempInput);
+      tempInput.value = colorValue;
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      var colorValueElement = element.getElementsByClassName('color-value')[0];
+      colorValueElement.innerHTML = 'Copied!';
+    }
+
+    // Call the function to generate color boxes
+    createColorBoxes();
+  </script>
+</body>
+
+</html>

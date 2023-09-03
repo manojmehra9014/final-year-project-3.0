@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksForce | CSS Debugging and Troubleshooting</title>
+    <link rel="stylesheet" href="/public/components/courses/html/html_course_style.css">
+    <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="p1 logo">
+                <img src="/public/assert/main_logo.png" alt="Logo">
+                <span>GeeksForce</span>
+            </div>
+            <div class="p2">
+                <div class="links">
+                    <a id="home" href="/">Home</a>
+                    <a href="/blog.html-introduction">HTML</a>
+                    <a href="/blog.introduction-to-css">CSS</a>
+                    <a href="/blog.introduction-to-javascript">JS</a>
+                    <a href="/blog.introduction-to-react">React.JS </a>
+                    <a href="/blog.introduction-to-nodejs">Node.Js</a>
+                </div>
+            </div>
+            <div class="p3">
+                <button><a target="_blank" href="https://chat.openai.com/">GPT</a></button>
+                <button><a href="">Post</a></button>
+            </div>
+        </nav>
+
+    </div>
+
+
+    <div class="main">
+
+
+
+        <div class="left-section">
+            <ul>
+                <li><a class="a" href="/blog.introduction-to-css">Introduction to CSS and its syntax</a></li>
+                <li><a class="a" href="/blog.selectors-and-specticificity">Selectors and specificity</a></li>
+                <li><a class="a" href="/blog.box-model">Box model</a></li>
+                <li><a class="a" href="/blog.display-and-positioning">Display and positioning</a></li>
+                <li><a class="a" href="/blog.css-typrography">CSS typography</a></li>
+                <li><a class="a" href="/blog.colors-and-backgrounds">Colors and backgrounds</a></li>
+                <li><a class="a" href="/blog.css-layout-techniques">CSS layout techniques</a></li>
+                <li><a class="a" href="/blog.media-queries">Responsive design with media queries</a></li>
+                <li><a class="a" href="/blog.css-frameworks">CSS frameworks like Bootstrap</a></li>
+                <li><a class="a" href="/blog.css-preprocessors">CSS preprocessors like Sass and LESS</a></li>
+                <li><a class="a" href="/blog.css-animations">CSS animations and transitions</a></li>
+                <li><a class="a" href="/blog.css=naming-convention">CSS best practices and naming conventions</a></li>
+                <li><a class="a" href="/blog.debugging-troubleshooting ">Debugging and troubleshooting CSS</a></li>
+                <li><a class="a" href="/blog.browser-compatibility">Browser compatibility</a></li>
+                <li><a class="a" href="/blog.performance-optimization">Performance optimization</a></li>
+                <li><a class="a" href="/blog.css-flexbox">CSS Flexbox</a></li>
+                <li><a class="a" href="/blog.css-grid">CSS Grid</a></li>
+                <li><a class="a" href="/blog.css-advance">CSS Advance</a></li>
+            </ul>
+        </div>
+
+
+        <div class="right-section" id="content">
+            <div id="topic13">
+                <h1 id="main_heading">CSS Debugging and Troubleshooting</h1>
+                <p>CSS can be tricky to work with, especially when things aren't displaying the way you expect them to.
+                    Here are some tips for debugging and troubleshooting CSS issues:</p>
+
+                <h2>1. Check for typos and syntax errors</h2>
+                <p>One of the most common issues with CSS is typos and syntax errors. Make sure you've spelled
+                    everything correctly and that you haven't missed any semicolons or curly brackets. Use a code editor
+                    that has syntax highlighting to help you catch these errors.</p>
+
+                <h2>2. Use developer tools</h2>
+                <p>Most modern browsers have built-in developer tools that allow you to inspect the HTML and CSS of a
+                    webpage. Use these tools to identify which CSS rules are being applied to a particular element and
+                    to test out changes in real time.</p>
+
+                <h2>3. Use specificity to your advantage</h2>
+                <p>If you're having trouble getting a CSS rule to apply, it could be a specificity issue. Make sure your
+                    selector is specific enough to override any conflicting styles. You can also use the !important
+                    declaration to give a rule priority, but use it sparingly.</p>
+
+                <h2>4. Check for conflicting styles</h2>
+                <p>If you have multiple CSS rules that apply to the same element, they can sometimes conflict with each
+                    other. Make sure there aren't any conflicting styles that are causing unexpected behavior. You can
+                    use the developer tools to identify which rules are being applied and where they're coming from.</p>
+
+                <h2>5. Use vendor prefixes correctly</h2>
+                <p>If you're using CSS features that aren't yet standardized, you may need to use vendor prefixes to
+                    ensure compatibility with different browsers. Make sure you're using the correct prefixes and that
+                    you're not applying them to the wrong properties.</p>
+
+                <h3>Here's an example of how to use the developer tools to troubleshoot a CSS issue:</h3>
+                <p>Suppose you have a website where the text color is not showing up as expected. You can use the
+                    developer tools to identify and troubleshoot the issue. Here are the steps: </p>
+                <ol>
+                    <li>Open the website in your browser and right-click on the element whose text color is not showing
+                        up as expected.</li>
+                    <li>From the context menu, select "Inspect" or "Inspect Element". This will open the developer tools
+                        in your browser.</li>
+                    <li>In the developer tools, navigate to the "Styles" or "Computed" tab.</li>
+                    <li>Look for the property "color" and see if it has the expected value. If not, you can modify it in
+                        the developer tools and see if the change fixes the issue.</li>
+                    <li>If the issue persists, check for any CSS rules that may be overriding the expected value of the
+                        "color" property. You can do this by looking at the "Cascade" or "Computed" tab and seeing which
+                        rules are being applied to the element.</li>
+                    <li>Once you have identified the issue, you can make the necessary changes to your CSS file and
+                        reload the website to see if the issue has been fixed.</li>
+                </ol>
+
+                <pre>
+      <code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;My Webpage&lt;/title&gt;
+&lt;style&gt;
+body {
+    background-color: yellow;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code>
+    </pre>
+
+                <p>In this example, the background color of the body is set to yellow. If we want to change it to red,
+                    we can use the developer tools to identify the CSS rule that's causing the yellow background:</p>
+
+                <img src="/assert/dubbuger.png"
+                    alt="Screenshot of developer tools showing CSS rule for background color">
+
+                <p>We can then modify the rule to change the background color to red:</p>
+
+                <pre>
+      <code>
+        body {
+          background-color: red;
+        }
+      </code>
+    </pre>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
