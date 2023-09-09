@@ -1432,7 +1432,7 @@ app.get('/blog.integrating-external-services-and-apis-in-node.js', (req, res) =>
 
 app.listen(port, () => {
   console.log("Server is Connected");
-  console.log(`Server is working on port number : ${port}`);
+  console.log(`Server is working on port number : ${port} \nlink/ url : http://localhost:${port}`);
 
 });
 

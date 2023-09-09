@@ -1,0 +1,7 @@
+fistly run command on ternimal 
+
+npm i - install all depenedency
+
+npm run dev - to run the web app and then go to localhost:3000
+
+wait a few second to connect with mongodb cloud

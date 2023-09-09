@@ -1,4 +1,0 @@
-user -> Course
-     -> Login -> database -> search
-     -> Registration -> database 
-     -> code editor ->  cache storage -> 
