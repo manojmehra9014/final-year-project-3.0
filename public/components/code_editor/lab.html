@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Code Editor</title>
+  <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../code_editor/image/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/public/components/code_editor/sctyle.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="info">
+      <img src="/public/assert/logo1.png" alt="logo">
+    </div>
+    <div class="file">
+      <form action="/savecodes" method="POST">
+        <button id="btn_save">Save</button>
+      </form>
+    </div>
+
+  </div>
+  <div class="container">
+    <section class="left-section">
+      <textarea class="html-code" contenteditable="true" id="editor" spellcheck="false"
+        placeholder="HTML Code"></textarea>
+
+      <textarea class="css-code" spellcheck="false" placeholder="CSS Code"></textarea>
+
+      <textarea class="js-code" spellcheck="false" placeholder="JS Code"></textarea>
+    </section>
+
+    <section class="right-section">
+      <center>
+        <h1 id="prev">Live Server preview</h1>
+      </center>
+      <iframe id="result"></iframe>
+    </section>
+  </div>
+</body>
+<script src="/public/components/code_editor/script.js"></script>
+<script src="/api/auth.js"></script>
+<script src="/backend/conn.js"></script>
+
+<script>
+  const cookieString = document.cookie;
+  const cookies = cookieString.split(';');
+
+  let username = '';
+  let useremail = '';
+  let filename = '';
+
+  cookies.forEach(cookie => {
+    const cookieParts = cookie.trim().split('=');
+    const cookieName = cookieParts[0];
+    const cookieValue = cookieParts[1];
+
+    if (cookieName === 'username') {
+      var decodedUsername = decodeURIComponent(cookieValue);
+      username = decodedUsername;
+    }
+    if (cookieName === 'email') {
+      var decodedEmail = decodeURIComponent(cookieValue);
+      useremail = decodedEmail;
+    }
+    if (cookieName === 'filename') {
+      var decodedfilename = decodeURIComponent(cookieValue);
+      filename = decodedfilename;
+    }
+  });
+
+  const elements = document.getElementsByClassName('name');
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].innerHTML = username;
+  }
+  const element1 = document.getElementsByClassName('email');
+  for (let i = 0; i < element1.length; i++) {
+    element1[i].innerHTML = useremail;
+  }
+  const element2 = document.getElementsByClassName('filename');
+  for (let i = 0; i < element2.length; i++) {
+    element2[i].innerHTML = filename;
+  }
+
+</script>
+
+</html>

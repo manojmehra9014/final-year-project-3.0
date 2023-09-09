@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Icon Library</title>
+    <link rel="shortcut icon" href="/public/assert/logo1.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+        }
+
+        .logo>img {
+            width: 30px;
+            margin: auto;
+            height: 30px;
+        }
+
+        .header {
+            width: 100%;
+            height: 10vh;
+        }
+
+        nav {
+            display: flex;
+            height: 10vh;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10vw;
+        }
+
+        .logo {
+            font-family: kalam, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .p1 {
+            width: 10vw;
+        }
+
+        .p2 {
+            width: 50vw;
+        }
+
+        .p3 {
+            width: 20vw;
+        }
+
+        .links>a {
+            margin: 0 1vw;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-decoration: none;
+            color: black;
+        }
+
+        button {
+            width: 6vw;
+            height: 4vh;
+            margin: 0 1vw;
+            color: white;
+            font-weight: 700;
+            background-color: blue;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        button>a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            vertical-align: middle;
+            /* Added property */
+        }
+
+        .icon-container {
+            text-align: center;
+        }
+
+        .copy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        #copy-link-modal {
+            margin: 5vh 10vh;
+        }
+
+        #link-input {
+            width: 15vw;
+            height: 4vh;
+            border-radius: 19px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgb(182, 182, 182);
+        }
+
+        #copy-button {
+            width: 8vw;
+            height: 4vh;
+            border-radius: 19px;
+            border: none;
+            background-color: rgb(67, 67, 252);
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            outline: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="p1 logo">
+            <img src="./public/assert/main_logo.png" alt="Logo">
+            <h2>GeeksForce</h2>
+        </div>
+        <div class="p2">
+            <div class="links">
+                <a id="home" href="#">Home</a>
+                <a href="./tools">Tools</a>
+                <a href="/login">Code Editor</a>
+                <a href="./contact">Contact/Help</a>
+                <a href="./about">About</a>
+            </div>
+        </div>
+        <div class="p3">
+            <button><a href="https://bard.google.com/" target="_blank">BARD-AI</a></button>
+            <button><a href="/chat-app">Code Help</a></button>
+        </div>
+    </nav>
+
+    <div class="icon-container">
+        <div class="icon">&#127968;</div> <!-- Home icon -->
+        <div class="icon">&#128100;</div> <!-- Signup icon -->
+        <div class="icon">&#128273;</div> <!-- Password icon -->
+        <div class="icon">&#128273;</div> <!-- Key icon -->
+        <div class="icon">&#128465;</div> <!-- Mail icon -->
+        <div class="icon">&#128231;</div> <!-- Chat icon -->
+        <div class="icon">&#128196;</div> <!-- Alert icon -->
+        <div class="icon">&#128421;</div> <!-- Calendar icon -->
+        <div class="icon">&#128722;</div> <!-- Settings icon -->
+        <div class="icon">&#128187;</div> <!-- Info icon -->
+        <div class="icon">&#128495;</div> <!-- User icon -->
+        <div class="icon">&#128515;</div> <!-- Smile icon -->
+        <div class="icon">&#128269;</div> <!-- Search icon -->
+        <div class="icon">&#128279;</div> <!-- Edit icon -->
+        <div class="icon">&#128232;</div> <!-- Camera icon -->
+        <div class="icon">&#128240;</div> <!-- Music icon -->
+        <div class="icon">&#128736;</div> <!-- Globe icon -->
+        <div class="icon">&#128214;</div> <!-- Bookmark icon -->
+        <div class="icon">&#128640;</div> <!-- Document icon -->
+        <div class="icon">&#128221;</div> <!-- Phone icon -->
+        <div class="icon">&#128223;</div> <!-- Email icon -->
+        <div class="icon">&#128712;</div> <!-- Chat bubble icon -->
+        <div class="icon">&#128225;</div> <!-- Heart icon -->
+        <div class="icon">&#128200;</div> <!-- Help icon -->
+        <div class="icon">&#128206;</div> <!-- Home icon -->
+        <div class="icon">&#128205;</div> <!-- Heart icon -->
+        <div class="icon">&#128126;</div> <!-- Star icon -->
+        <div class="icon">&#128090;</div> <!-- Trophy icon -->
+        <div class="icon">&#128296;</div> <!-- Gift icon -->
+        <div class="icon">&#128222;</div> <!-- Camera icon -->
+        <div class="icon">&#128247;</div> <!-- Music icon -->
+        <div class="icon">&#128250;</div> <!-- Like icon -->
+        <div class="icon">&#128184;</div> <!-- Message icon -->
+        <div class="icon">&#128172;</div> <!-- Bookmark icon -->
+        <div class="icon">&#128203;</div> <!-- Beer icon -->
+        <div class="icon">&#128163;</div> <!-- Phone icon -->
+        <div class="icon">&#128197;</div> <!-- Lightbulb icon -->
+        <div class="icon">&#128218;</div> <!-- Location icon -->
+        <div class="icon">&#128176;</div> <!-- Calendar icon -->
+        <div class="icon">&#128192;</div> <!-- Tag icon -->
+        <div class="icon">&#128217;</div> <!-- Target icon -->
+        <div class="icon">&#128238;</div> <!-- Camera icon -->
+        <div class="icon">&#128226;</div> <!-- Eye icon -->
+        <div class="icon">&#128481;</div> <!-- Share icon -->
+        <div class="icon">&#128287;</div> <!-- Send icon -->
+        <div class="icon">&#128229;</div> <!-- Shield icon -->
+        <div class="icon">&#128095;</div> <!-- Shopping cart icon -->
+        <div class="icon">&#128099;</div> <!-- Credit card icon -->
+        <div class="icon">&#128104;</div> <!-- Wallet icon -->
+        <div class="icon">&#128291;</div> <!-- Globe icon -->
+        <div class="icon">&#128462;</div> <!-- Airplane icon -->
+        <div class="icon">&#128276;</div> <!-- Chart icon -->
+        <div class="icon">&#128378;</div> <!-- Document icon -->
+        <div class="icon">&#128444;</div> <!-- Search icon -->
+        <div class="icon">&#128274;</div> <!-- Paperclip icon -->
+        <div class="icon">&#128269;</div> <!-- Map icon -->
+        <div class="icon">&#128205;</div> <!-- Heart icon -->
+        <div class="icon">&#128126;</div> <!-- Star icon -->
+        <div class="icon">&#128090;</div> <!-- Trophy icon -->
+        <div class="icon">&#128296;</div> <!-- Gift icon -->
+        <div class="icon">&#128222;</div> <!-- Camera icon -->
+        <div class="icon">&#128247;</div> <!-- Music icon -->
+        <div class="icon">&#128250;</div> <!-- Like icon -->
+        <div class="icon">&#128184;</div> <!-- Message icon -->
+        <div class="icon">&#128172;</div> <!-- Bookmark icon -->
+        <div class="icon">&#128203;</div> <!-- Beer icon -->
+        <div class="icon">&#128163;</div> <!-- Phone icon -->
+        <div class="icon">&#128197;</div> <!-- Lightbulb icon -->
+        <div class="icon">&#128218;</div> <!-- Location icon -->
+        <div class="icon">&#128176;</div> <!-- Calendar icon -->
+        <div class="icon">&#128192;</div> <!-- Tag icon -->
+        <div class="icon">&#128217;</div> <!-- Target icon -->
+        <div class="icon">&#128238;</div> <!-- Camera icon -->
+        <div class="icon">&#128226;</div> <!-- Eye icon -->
+        <div class="icon">&#128481;</div> <!-- Share icon -->
+        <div class="icon">&#128287;</div> <!-- Send icon -->
+        <div class="icon">&#128229;</div> <!-- Shield icon -->
+        <div class="icon">&#128095;</div> <!-- Shopping cart icon -->
+        <div class="icon">&#128099;</div> <!-- Credit card icon -->
+        <div class="icon">&#128104;</div> <!-- Wallet icon -->
+        <div class="icon">&#128291;</div> <!-- Globe icon -->
+        <div class="icon">&#128462;</div> <!-- Airplane icon -->
+        <div class="icon">&#128276;</div> <!-- Chart icon -->
+        <div class="icon">&#128378;</div> <!-- Document icon -->
+        <div class="icon">&#128444;</div> <!-- Search icon -->
+        <div class="icon">&#128274;</div> <!-- Paperclip icon -->
+        <div class="icon">&#128269;</div> <!-- Map icon -->
+        <div class="icon">&#128181;</div> <!-- Mail icon -->
+        <div class="icon">&#128299;</div> <!-- Umbrella icon -->
+        <div class="icon">&#128463;</div> <!-- Link icon -->
+        <div class="icon">&#128176;</div> <!-- Calendar icon -->
+        <div class="icon">&#128465;</div> <!-- Mail icon -->
+        <div class="icon">&#128241;</div> <!-- Dollar icon -->
+        <div class="icon">&#128230;</div> <!-- Clock icon -->
+        <div class="icon">&#128174;</div> <!-- Airplane icon -->
+        <div class="icon">&#128226;</div> <!-- Eye icon -->
+        <div class="icon">&#128273;</div> <!-- Lock icon -->
+        <div class="icon">&#128394;</div> <!-- Chat bubble icon -->
+        <div class="icon">&#128173;</div> <!-- Paperclip icon -->
+        <div class="icon">&#128102;</div> <!-- Pencil icon -->
+        <div class="icon">&#128187;</div> <!-- Info icon -->
+        <div class="icon">&#128712;</div> <!-- Chat bubble icon -->
+        <div class="icon">&#128273;</div> <!-- Lock icon -->
+        <div class="icon">&#128196;</div> <!-- Alert icon -->
+        <div class="icon">&#128181;</div> <!-- Mail icon -->
+        <div class="icon">&#128142;</div> <!-- Music icon -->
+        <div class="icon">&#128195;</div> <!-- Note icon -->
+        <div class="icon">&#128711;</div> <!-- Options icon -->
+        <div class="icon">&#128273;</div> <!-- Password icon -->
+        <div class="icon">&#128173;</div> <!-- Paperclip icon -->
+        <div class="icon">&#128102;</div> <!-- Pencil icon -->
+        <div class="icon">&#128226;</div> <!-- Eye icon -->
+        <div class="icon">&#128230;</div> <!-- Clock icon -->
+        <div class="icon">&#128169;</div> <!-- Checkmark icon -->
+        <div class="icon">&#128187;</div> <!-- Info icon -->
+        <div class="icon">&#128736;</div> <!-- Globe icon -->
+        <div class="icon">&#128205;</div> <!-- Heart icon -->
+        <div class="icon">&#128126;</div> <!-- Star icon -->
+        <div class="icon">&#128090;</div> <!-- Trophy icon -->
+        <div class="icon">&#128296;</div> <!-- Gift icon -->
+        <div class="icon">&#128222;</div> <!-- Camera icon -->
+        <div class="icon">&#128247;</div> <!-- Music icon -->
+        <div class="icon">&#128250;</div> <!-- Like icon -->
+        <div class="icon">&#128184;</div> <!-- Message icon -->
+        <div class="icon">&#128172;</div> <!-- Bookmark icon -->
+        <div class="icon">&#128203;</div> <!-- Beer icon -->
+        <div class="icon">&#128163;</div> <!-- Phone icon -->
+        <div class="icon">&#128197;</div> <!-- Lightbulb icon
+
+        <!-- Add more icons here -->
+    </div>
+
+    <div id="copy-link-modal" style="display: none;">
+        <center>
+            <input type="text" id="link-input" readonly>
+            <button id="copy-button" onclick="copyIconLink()">Copy Link</button>
+        </center>
+    </div>
+
+    <script>
+        // Function to copy the icon's link
+        function copyIconLink() {
+            var linkInput = document.getElementById('link-input');
+            linkInput.select();
+            document.execCommand('copy');
+            document.getElementById('copy-button').style.backgroundColor = "crimson";
+            document.getElementById('copy-button').innerHTML = "Copied!";
+        }
+
+        // Add click event listeners to each icon
+        var icons = document.getElementsByClassName('icon');
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].addEventListener('click', function (event) {
+                var iconCode = event.target.innerHTML;
+                var linkInput = document.getElementById('link-input');
+                linkInput.value = '<i class="icon">' + iconCode + '</i>';
+                var modal = document.getElementById('copy-link-modal');
+                modal.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+
+</html>
